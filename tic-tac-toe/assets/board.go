@@ -10,12 +10,12 @@ type Board struct {
 	board        [][]string
 }
 
-func Reset(size int32) Board {
+func Reset(size int32) *Board {
 	boardState := make([][]string, size)
 	for i := range boardState {
 		boardState[i] = make([]string, size)
 	}
-	return Board{
+	return &Board{
 		size,
 		make(map[int32]map[string]int),
 		make(map[int32]map[string]int),
@@ -24,7 +24,7 @@ func Reset(size int32) Board {
 	}
 }
 
-func (player Player) Place(board Board, x, y int32) bool {
+func (player *Player) Place(board *Board, x, y int32) bool {
 	if x >= board.size || y >= board.size {
 		panic("Input size exceeded the board size")
 	}

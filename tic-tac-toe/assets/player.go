@@ -5,6 +5,6 @@ type Player struct {
 	marker string
 }
 
-func MakePlayer(name, marker string) Player {
-	return Player{name, marker}
+func MakePlayer(name, marker string) *Player {
+	return &Player{name, marker}
 }

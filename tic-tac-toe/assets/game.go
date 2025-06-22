@@ -2,12 +2,12 @@ package game
 
 import "fmt"
 
-func Game(player_1, player_2 Player, board Board) {
+func Game(player_1, player_2 *Player, board *Board) {
 	turn := 0
 	gameDone := false
 
 	for !gameDone {
-		var player Player
+		var player *Player
 		if turn%2 == 0 {
 			player = player_1
 		} else {
